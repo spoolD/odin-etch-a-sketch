@@ -4,7 +4,7 @@ function grid(size){
     for (let i = 0; i < size; i++){
         for (let j = 0; j < size; j++){
             let newDiv = document.createElement('div');
-            newDiv.textContent = 'x';
+            newDiv.textContent='-';
             container.appendChild(newDiv);
         }
             

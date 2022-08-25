@@ -2,7 +2,11 @@
     display: grid;
 }
 
+.grid-container div:hover{
+    background-color: black;
+    
+}
+
 .grid-container div{
-    border: 1px solid black;
-    background: green;
+    border: 2px solid black;
 }
