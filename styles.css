@@ -4,11 +4,10 @@
     height: 500px;
 }
 
-.grid-container div:hover{
-    background-color: black;
-    
+.pixel{
+    border: 2px solid black;
 }
 
-.grid-container div{
-    border: 2px solid black;
+.pixel-colored{
+    background-color: black;  
 }

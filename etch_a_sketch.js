@@ -9,11 +9,35 @@ function grid(size){
     for (let i = 0; i < size; i++){
         for (let j = 0; j < size; j++){
             let newDiv = document.createElement('div');
-            newDiv.textContent='-';
+            newDiv.classList.add('pixel');
+
             container.appendChild(newDiv);
-        }
-            
+        }     
     }
 }
 
 grid(16)
+
+let pixels = document.querySelectorAll('.pixel');
+pixels.forEach((pixel)=> {
+    pixel.addEventListener("mouseenter", color);
+})
+
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener("click", reset);
+
+function color(event){
+
+    //Only change color if left mouse button is pressed during hover
+    if (event.buttons===1){
+        event.srcElement.className = 'pixel-colored';
+    }  
+}
+
+function reset(){
+    let colorPixels = document.querySelectorAll('.pixel-colored');
+    colorPixels.forEach((pixel) => {
+        pixel.classList.remove('pixel-colored');
+        pixel.classList.add('pixel');
+    })
+}
