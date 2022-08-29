@@ -1,5 +1,7 @@
 .grid-container {
     display: grid;
+    width: 500px;
+    height: 500px;
 }
 
 .grid-container div:hover{
