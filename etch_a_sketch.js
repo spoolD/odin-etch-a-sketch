@@ -1,3 +1,21 @@
+grid(16);
+setPixels();
+
+
+let gridSize = document.getElementById('grid-size');
+gridSize.onchange = () => {
+    reset();
+    let oldPixels = document.querySelectorAll('.pixel')
+    oldPixels.forEach((pixel) => pixel.remove());
+    grid(gridSize.value);
+    setPixels();
+}
+
+// Reset Grid with Button
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener("click", reset);
+
+
 function grid(size){
     // Get grid container
     const container = document.querySelector('.grid-container');
@@ -16,16 +34,6 @@ function grid(size){
     }
 }
 
-grid(16)
-
-let pixels = document.querySelectorAll('.pixel');
-pixels.forEach((pixel)=> {
-    pixel.addEventListener("mouseenter", color);
-})
-
-const resetButton = document.getElementById('reset');
-resetButton.addEventListener("click", reset);
-
 function color(event){
 
     //Only change color if left mouse button is pressed during hover
@@ -40,4 +48,11 @@ function reset(){
         pixel.classList.remove('pixel-colored');
         pixel.classList.add('pixel');
     })
+}
+
+function setPixels(){
+    let pixels = document.querySelectorAll('.pixel');
+    pixels.forEach((pixel)=> {
+    pixel.addEventListener("mouseenter", color);
+})
 }
