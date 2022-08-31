@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="master-grid" class="grid-container"></div>
+    <div class="container-layer"></div>
+        <div class="image-layer">
+            <!--Image from https://www.nytimes.com/2012/03/22/garden/etch-a-sketch-becomes-a-symbol-of-second-chances.html-->
+            <img src="22ETCH-jumbo.webp">
+        </div>
+        <div id="master-grid" class="grid-container"></div>
     <button id="reset">RESET</button>
-    <input id="grid-size" type="range" min="16" max="100">
+    <div class="slider-container">
+        <label for="grid-size">Grid Size</label>
+        <input id="grid-size" type="range" min="16" max="64" class="slider">
+    </div>
 </body>
 </html>

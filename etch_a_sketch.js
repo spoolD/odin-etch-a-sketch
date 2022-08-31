@@ -21,10 +21,11 @@ function grid(size){
     const container = document.querySelector('.grid-container');
     
     // Set size and number of pixels using CSS Grid. The size of the container is held constant
-    container.setAttribute('style', `grid-template-rows: repeat(${size}, ${container.clientHeight/size}px); grid-template-columns: repeat(${size}, ${container.clientWidth/size}px);`)
-    
+    const widthNum = Math.floor(size*(7/5))
+    container.setAttribute('style', `grid-template-rows: repeat(${size}, ${container.clientHeight/size}px); grid-template-columns: repeat(${widthNum}, ${container.clientWidth/widthNum}px);`)
+
     // Create a div for each pixel
-    for (let i = 0; i < size; i++){
+    for (let i = 0; i < widthNum; i++){
         for (let j = 0; j < size; j++){
             let newDiv = document.createElement('div');
             newDiv.classList.add('pixel');
@@ -35,7 +36,6 @@ function grid(size){
 }
 
 function color(event){
-
     //Only change color if left mouse button is pressed during hover
     if (event.buttons===1){
         event.srcElement.className = 'pixel-colored';
